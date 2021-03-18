@@ -9,5 +9,5 @@ public interface DiscountPolicy {
      * @param price
      * @return 할인대상 금액
      */
-    int discoint(Member member,int price);
+    int discount(Member member,int price);
 }
