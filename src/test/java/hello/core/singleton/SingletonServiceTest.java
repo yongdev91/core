@@ -14,7 +14,7 @@ public class SingletonServiceTest {
     @DisplayName("싱글톤 패턴을 적용한 객체 사용")
     public void singletonServiceTest() {
         // private로 생성자 접근을 막음, 오류
-        // new SingletonService();
+        // new SingletonService()
 
         // 1. 조회 : 호출할때마다 같은 값을 반환
         SingletonService singletonService1 = SingletonService.getInstance();

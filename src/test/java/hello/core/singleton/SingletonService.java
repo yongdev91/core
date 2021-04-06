@@ -10,6 +10,11 @@ public class SingletonService {
         return instance;
     }
 
+    // 외부에서 new생성을 막기 위해 private 생성자를 만들었다.
+    private SingletonService() {
+
+    }
+
     public void logic() {
         System.out.println("싱글톤 객체 로직 호출");
     }
