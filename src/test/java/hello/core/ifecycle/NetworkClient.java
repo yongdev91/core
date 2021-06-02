@@ -3,6 +3,9 @@ package hello.core.ifecycle;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 // public class NetworkClient implements InitializingBean, DisposableBean {
 public class NetworkClient {
 
@@ -32,5 +35,14 @@ public class NetworkClient {
         System.out.println("disconnect :: url : " + url);
     }
 
+    @PreDestroy
+    public void close() {
+        disconnect();
+    }
 
+    @PostConstruct
+    public void init() {
+        connect();
+        call("메세지");
+    }
 }
