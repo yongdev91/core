@@ -4,7 +4,6 @@ import hello.core.AppConfig;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.boot.convert.DataSizeUnit;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class BeanDefinitionTest {
@@ -22,7 +21,5 @@ public class BeanDefinitionTest {
                 System.out.println("beanDefinitionName  = " + beanDefinitionName + "beanDefinition : " + beanDefinition);
             }
         }
-
     }
-
 }
