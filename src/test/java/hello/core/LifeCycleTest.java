@@ -22,6 +22,14 @@ public class LifeCycleTest {
      * 스프링 컨테이너 생성 -> 스프링 빈 생성 -> 의존관계 주입 -> 초기화 콜백 -> 사용 -> 소멸전 콜백 -> 스프링 종료
      * - 초기화 콜백 : 빈이 생성되고, 빈의 의존관계 주입이 완료된 후 호출
      * - 소멸전 콜백 : 빈이 소멸되기 직전에 호출
+     *
+     * 1. 인터페이스를 활용하는 방법(권장하지 않음)
+     * 2. 설정정보에 초기화, 소멸 메서드 지정(라이브러리 사용시 사용에 용이함)
+     * 3. 어노테이션 사용(스프링 권장사항)
+     * - @PostConstruct, @PreDestroy 어노테이션
+     * - 최신 스프링에서 가장 권장
+     * - 어노테이션이라 사용하기 편리
+     * - 자바표준
      */
 
 
@@ -35,6 +43,8 @@ public class LifeCycleTest {
     @Configuration
     static class LifeCycleConfig {
 
+        // 2. 설정정보에 초기화, 소멸 메서드 지정(라이브러리 사용시 사용에 용이함)
+        //@Bean(initMethod = "init", destroyMethod = "close")
         @Bean
         public NetworkClient networkClient() {
             NetworkClient networkClient = new NetworkClient();
